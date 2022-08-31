@@ -11,6 +11,8 @@ app.use(cors());
 
 app.use(express.json());
 
+app.use("/images", express.static("./public/images"));
+
 app.listen(PORT, () => {
     console.log("App has started at port " + PORT);
 });
