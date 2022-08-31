@@ -26,34 +26,15 @@ router.get("/videos/:videoId", (req, res) => {
 router.post(("/videos"), (req, res) => {
 
     const newVideo = {
-        id: crypto.randomUUID(),
         title: req.body.title,
         channel: "Test Channel",
-        content: req.body.content,
-        image: "./public/images/Upload-video-preview.jpg",
-        description: "jkvndfjkbnsf gnldjkglnsk fadljkngadlkn  fadhkk faafdkjbad fahdagk ils;fgdljbg jf kjbvsk  ljnvdslnoih",
+        id: crypto.randomUUID(),
+        image: "http://localhost:8000/images/Upload-video-preview.jpg",
+        description: req.body.description,
         views: 0,
         likes: 0,
         timestamp: Date.now(),
-        comments: [
-            {
-                comment: "gu fjkbfbjk vsjofiojdijnod geuhoegiuhergiuherguhi!",
-                likes: 0,
-                name: "James Olive",
-                timestamp: 1234567890,
-            },
-            {
-                comment: "rgnjkrgebkjrg rgwkjbgrwbhjkrwg rgwbkjhrwgbkjr...",
-                likes: 0,
-                name: "Gwen Green",
-                timestamp: 1234567890,
-            },
-            {
-                comment: "jksbgrwbjk sjbkgrwbjk gwrlnkgwrnlkln lnlnjnj nljnbjlrgbeogruw bjivbwkhbvwri onnlojknibu njk.",
-                likes: 0,
-                name: "Mabel Fields",
-                timestamp: 1234567890,
-            }],
+        comments: [],
     }
     console.log(newVideo);
     const videos = readVideos();
