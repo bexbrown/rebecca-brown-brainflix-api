@@ -69,10 +69,4 @@ router.post(("/videos/:videoId/comments"), (req, res) => {
 
 })
 
-
-
-
-
-
-
 module.exports = router;

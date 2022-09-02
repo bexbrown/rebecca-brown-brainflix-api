@@ -1,11 +1,9 @@
 require('dotenv').config()
 const express = require("express");
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT;
 const videoRoutes = require("./routes/videos");
 const cors = require("cors");
-
-console.log("THIS IS DOTENV", process.env)
 
 app.use(cors());
 
@@ -17,5 +15,5 @@ app.listen(PORT, () => {
     console.log("App has started at port " + PORT);
 });
 
-app.use("/", videoRoutes)
+app.use("/", videoRoutes);
 
