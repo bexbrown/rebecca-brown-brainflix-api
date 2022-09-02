@@ -25,6 +25,16 @@ router.get("/videos/:videoId", (req, res) => {
 //post video 
 router.post(("/videos"), (req, res) => {
 
+    if (!req.body.title) {
+        res.status(400).send("There must be a title");
+        return;
+    }
+
+    if (req.body.title.length < 3) {
+        res.status(400).send("Title must be at least 3 characters in length");
+        return;
+    }
+
     const newVideo = {
         title: req.body.title,
         channel: "Test Channel",
@@ -47,6 +57,17 @@ router.post(("/videos"), (req, res) => {
 
 //post comment
 router.post(("/videos/:videoId/comments"), (req, res) => {
+
+    if (!req.body.comment) {
+        res.status(400).send("There must be a comment");
+        return;
+    }
+
+    if (req.body.comment.length < 3) {
+        res.status(400).send("Comment must be at least 3 characters in length");
+        return;
+    }
+
     const newComment = {
         comment: req.body.comment,
         likes: 0,
