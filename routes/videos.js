@@ -54,7 +54,6 @@ router.post(("/videos"), (req, res) => {
     res.status(201).json(newVideo);
 })
 
-
 //post comment
 router.post(("/videos/:videoId/comments"), (req, res) => {
 
