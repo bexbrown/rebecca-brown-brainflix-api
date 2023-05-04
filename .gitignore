@@ -1,3 +1,5 @@
 .DS_Store
 *.css.map
 .vscode
+/nodemodules/
+.env
